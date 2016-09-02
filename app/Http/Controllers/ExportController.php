@@ -60,12 +60,10 @@ class ExportController extends Controller
         {
             $users = User::all();
             view()->share('users',$users);
-            if($request->has('download')){
+
                 $pdf = PDF::loadView('htmltopdfview');
                 return $pdf->download('Lista de Usuários');
-            }
-            return view('htmltopdfview');
-        }
+                  }
 
 }
 
